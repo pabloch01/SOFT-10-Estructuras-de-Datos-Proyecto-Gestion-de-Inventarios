@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class ListaProductos {
-    Nodo primero;
+    private Nodo primero;
 
     public ListaProductos() {
         primero = null;
@@ -13,7 +13,7 @@ public class ListaProductos {
 
     public void insertarInicio(Producto p) {
         Nodo nuevo = new Nodo(p);
-        nuevo.siguiente = primero;
+        nuevo.setSiguiente(primero);
         primero = nuevo;
     }
 
@@ -23,20 +23,20 @@ public class ListaProductos {
             primero = nuevo;
         } else {
             Nodo actual = primero;
-            while (actual.siguiente != null) {
-                actual = actual.siguiente;
+            while (actual.getSiguiente() != null) {
+                actual = actual.getSiguiente();
             }
-            actual.siguiente = nuevo;
+            actual.setSiguiente(nuevo);
         }
     }
 
     public Producto buscar(String nombre) {
         Nodo actual = primero;
         while (actual != null) {
-            if (actual.dato.getNombre().equalsIgnoreCase(nombre.trim())) {
-                return actual.dato;
+            if (actual.getDato().getNombre().equalsIgnoreCase(nombre.trim())) {
+                return actual.getDato();
             }
-            actual = actual.siguiente;
+            actual = actual.getSiguiente();
         }
         return null;
     }
@@ -69,20 +69,20 @@ public class ListaProductos {
             return false;
         }
 
-        if (primero.dato.getNombre().equalsIgnoreCase(nombre.trim())) {
-            primero = primero.siguiente;
+        if (primero.getDato().getNombre().equalsIgnoreCase(nombre.trim())) {
+            primero = primero.getSiguiente();
             return true;
         }
 
         Nodo anterior = primero;
-        Nodo actual = primero.siguiente;
+        Nodo actual = primero.getSiguiente();
         while (actual != null) {
-            if (actual.dato.getNombre().equalsIgnoreCase(nombre.trim())) {
-                anterior.siguiente = actual.siguiente;
+            if (actual.getDato().getNombre().equalsIgnoreCase(nombre.trim())) {
+                anterior.setSiguiente(actual.getSiguiente());
                 return true;
             }
             anterior = actual;
-            actual = actual.siguiente;
+            actual = actual.getSiguiente();
         }
         return false;
     }
@@ -96,11 +96,11 @@ public class ListaProductos {
         double total = 0;
         System.out.println("\n--- REPORTE DE COSTOS ---");
         while (actual != null) {
-            Producto p = actual.dato;
+            Producto p = actual.getDato();
             double costo = p.getCostoTotal();
             System.out.printf("%s | Cantidad: %d | Costo: %.2f%n", p.getNombre(), p.getCantidad(), costo);
             total += costo;
-            actual = actual.siguiente;
+            actual = actual.getSiguiente();
         }
         System.out.printf("Costo total acumulado: %.2f%n", total);
     }
@@ -112,8 +112,8 @@ public class ListaProductos {
         }
         Nodo actual = primero;
         while (actual != null) {
-            System.out.println(actual.dato);
-            actual = actual.siguiente;
+            System.out.println(actual.getDato());
+            actual = actual.getSiguiente();
         }
     }
 }
