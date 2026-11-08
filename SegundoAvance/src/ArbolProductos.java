@@ -35,7 +35,7 @@ public class ArbolProductos {
     public Producto buscar(String nombre) {
         Nodo actual = raiz;
         while (actual != null) {
-            int cmp = nombre.compareToIgnoreCase(actual.getDato().getNombre());
+            int cmp = nombre.trim().compareToIgnoreCase(actual.getDato().getNombre());
             if (cmp == 0) return actual.getDato();
             actual = (cmp < 0) ? actual.getIzquierdo() : actual.getDerecho();
         }
@@ -55,7 +55,7 @@ public class ArbolProductos {
         inorden(nodo.getIzquierdo());
         Producto p = nodo.getDato();
         System.out.println("Nombre: " + p.getNombre()
-                + " | Precio: " + p.getPrecio()
+                + " | Precio: " + String.format("%.2f", p.getPrecio())
                 + " | Cantidad: " + p.getCantidad());
         inorden(nodo.getDerecho());
     }
