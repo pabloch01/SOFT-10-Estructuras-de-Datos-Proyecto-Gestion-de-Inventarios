@@ -21,7 +21,7 @@ public class Main {
     public static void menu() {
         int opcion = -1;
         do {
-            System.out.println("\n===== MENÚ DE GESTIÓN DE INVENTARIO Y VENTAS =====");
+            System.out.println("\n===== MENU DE GESTIÓN DE INVENTARIO Y VENTAS =====");
             System.out.println("1. Insertar producto al inventario");
             System.out.println("2. Registrar un cliente y llenar su carrito");
             System.out.println("3. Atender al siguiente cliente");
