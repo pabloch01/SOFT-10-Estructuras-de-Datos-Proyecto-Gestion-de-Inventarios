@@ -147,7 +147,7 @@ public class Main {
         }
     }
 
-    static String leerNombre(String msg) {
+    private static String leerNombre(String msg) {
         while (true) {
             System.out.print(msg);
             String nombre = sc.nextLine().trim();
@@ -158,7 +158,7 @@ public class Main {
         }
     }
 
-    static int leerCantidad(String msg) {
+    private static int leerCantidad(String msg) {
         while (true) {
             int cantidad = leerEntero(msg);
             if (cantidad > 0) {
@@ -168,7 +168,7 @@ public class Main {
         }
     }
 
-    static double leerDouble(String msg) {
+    private static double leerDouble(String msg) {
         while (true) {
             try {
                 System.out.print(msg);
@@ -179,7 +179,7 @@ public class Main {
         }
     }
 
-    static int leerEntero(String msg) {
+    private static int leerEntero(String msg) {
         while (true) {
             try {
                 System.out.print(msg);
@@ -190,7 +190,7 @@ public class Main {
         }
     }
 
-    static LocalDate leerFecha(String msg) {
+    private static LocalDate leerFecha(String msg) {
         while (true) {
             System.out.print(msg);
             String texto = sc.nextLine().trim();
