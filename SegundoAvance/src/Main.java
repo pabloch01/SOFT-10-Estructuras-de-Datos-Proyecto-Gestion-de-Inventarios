@@ -25,7 +25,7 @@ public class Main {
             System.out.println("1. Insertar producto al inventario");
             System.out.println("2. Registrar un cliente y llenar su carrito");
             System.out.println("3. Atender al siguiente cliente");
-            System.out.println("4. Ver inventario completo (Árbol de Productos)");
+            System.out.println("4. Ver inventario completo (Arbol de Productos)");
             System.out.println("5. Buscar un producto en el inventario");
             System.out.println("6. Ver cola de clientes en espera");
             System.out.println("0. Salir del sistema");
